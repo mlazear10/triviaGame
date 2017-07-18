@@ -1,0 +1,29 @@
+body {
+	background-image: url("images/party.jpg");
+
+}
+
+#wrapper {
+	background-color: lightyellow;
+	opacity: 50px;
+}
+
+h1 {
+	text-align: center;
+	font-family: arial, times;
+	font-size: 28px;
+}
+
+h2 {
+	font-size: arial, times;
+}
+
+button {
+	font-family: arial, times;
+
+}
+
+#subwrapper {
+	text-align: center;
+
+}
