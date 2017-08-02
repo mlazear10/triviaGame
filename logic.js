@@ -127,7 +127,7 @@ var game = {
 		console.log("wrong, try again");
 		clearInterval(timer);
 		game.incorrect++;
-		$('#subwrapper').html('<h2>Wrong answer, next question!<h2>');
+		$('#subwrapper').html('<h2>Wrong answer, next question!<h2><br><img src="images/thumbDown.png" style="width: 300px; height: auto" alt="Boo!">');
 		if(game.currentQuestion == questions.length-1) {
 			setTimeout(game.results, 3 * 1000);
 		}
