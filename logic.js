@@ -27,7 +27,7 @@ var questions = [{
 	question: "What is the most popular computer programming language in 2017?",
 	answers: ["python", "java", "javaScript", "mySQL", "c++"],
 	correctAnswer: "javaScript",
-	image: "images/javaScript",
+	image: "images/javaScript.png",
 }, {
 	question: "What does the DOM stand for in javaScript?",
 	answers: ["do or move", "death or moon", "dualistic or monistic", "document object model", "data on models"],
@@ -68,7 +68,7 @@ var game = {
 		$('#subwrapper').append("<h2>"+ questions[game.currentQuestion].question+"</h2>");
 		//posts the answers to the corresponging question
 		for(var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
-			$('#subwrapper').append('<button class="answer-button" id="button-'+i+'" data-name="'+ questions[game.currentQuestion].answers[i]+'">'+questions[game.currentQuestion].answers[i]+'</button>');
+			$('#subwrapper').append('<button class="btn btn-success answer-button" id="button-'+i+'" data-name="'+ questions[game.currentQuestion].answers[i]+'">'+questions[game.currentQuestion].answers[i]+'</button>');
 		}
 	},
 	nextQuestion: function(){
@@ -96,7 +96,7 @@ var game = {
 		$('#subwrapper').append("<h3>Correct: " + game.correct + "</h3>");
 		$('#subwrapper').append("<h3>Incorrect: " + game.incorrect +"</h3>");
 		$('#subwrapper').append("<h3>Unanswered: " + game.unanswered + "</h3>");
-		$('#subwrapper').append("<button id='reset'>RESET</button>");
+		$('#subwrapper').append("<button class='btn btn-success' id='reset'>RESET</button>");
 		// console log the scores of the questions below (cumulative)
 		console.log(game.unanswered + game.correct + game.incorrect);
 	},
@@ -113,7 +113,8 @@ var game = {
 		console.log("you nailed it");
 		clearInterval(timer);
 		game.correct++;
-		$('#subwrapper').html('<h2>YOU GOT IT RIGHT</h2>');
+		$('#subwrapper').append('<h2>YOU GOT IT RIGHT</h2><br><img src="' + questions[game.currentQuestion].image +'" style="width: 300px; height: auto">');
+
 		if(game.currentQuestion == questions.length-1) {
 			setTimeout(game.results, 3 * 1000);
 		}
@@ -126,7 +127,7 @@ var game = {
 		console.log("wrong, try again");
 		clearInterval(timer);
 		game.incorrect++;
-		$('#subwrapper').html("Wrong answer, next question!");
+		$('#subwrapper').html('<h2>Wrong answer, next question!<h2>');
 		if(game.currentQuestion == questions.length-1) {
 			setTimeout(game.results, 3 * 1000);
 		}
