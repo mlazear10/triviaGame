@@ -17,7 +17,7 @@ var questions = [{
 	question: "What is a sentence summary of zen?",
 	answers: ["a Japanese school of Mahayana Buddhism emphasizing the value of meditation and intuition", "a term used to be happy", "a lifestyle that is meant to teach self-discipline", "was started in Africa"],
 	correctAnswer: "a Japanese school of Mahayana Buddhism emphasizing the value of meditation and intuition",
-	image: "../practice/enso.png",
+	image: "images/enso.png",
 }, {
 	question: "What is the capital of California?",
 	answers: ["Los Angeles", "Hollywood", "San Diego", "Sacramento", "Berkeley"],
