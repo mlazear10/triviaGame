@@ -38,6 +38,11 @@ var questions = [{
 	answers: ["a", "b", "e", "m", "k"],
 	correctAnswer: "b",
 	image: "images/b.jpg",
+}, {
+	question: "What is the California state animal?",
+	answers: ["apple", "tiger", "dolphin", "blue whale", "grizzly bear"],
+	correctAnswer: "grizzly bear",
+	image: "images/grizzly.jpg",
 }];
 
 var game = {
@@ -121,7 +126,13 @@ var game = {
 		console.log("wrong, try again");
 		clearInterval(timer);
 		game.incorrect++;
-		$('#subwrapper').html
+		$('#subwrapper').html("Wrong answer, next question!");
+		if(game.currentQuestion == questions.length-1) {
+			setTimeout(game.results, 3 * 1000);
+		}
+		else {
+			setTimeout(game.nextQuestion, 3 * 1000);
+		}
 	},
 	reset: function(){
 		//reset back to original state
